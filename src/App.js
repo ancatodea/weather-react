@@ -24,7 +24,7 @@ export default function App() {
           </div>
           <small>
             <a
-              href="https://github.com/ancatodea/vanilla-weather-app"
+              href="https://github.com/ancatodea/weather-react"
               target="_blank"
               rel="noreferrer"
             >

@@ -28,7 +28,7 @@ export default function App() {
               target="_blank"
               rel="noreferrer"
             >
-              Open-source code
+              Open-source code { }
             </a>
             by Anca Todea
           </small>

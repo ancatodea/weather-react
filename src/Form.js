@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 import "./Form.css";
 
 export default function Form() {
   return (
     <div className="Form">
-      <form id="search-form" className="mb-3">
+      <form id="search-form" 
+      className="mb-3"
+      onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-9">
             <input
@@ -12,6 +15,7 @@ export default function Form() {
               placeholder="Type a city.."
               className="form-control"
               id="city-input"
+              onChange={changeCity}
             />
           </div>
           <div className="col-3">

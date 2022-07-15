@@ -29,3 +29,49 @@
 .Overview li:first-letter {
     text-transform: capitalize;
 }
+.WeatherData ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.WeatherData li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(135, 135, 135);
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.WeatherData li:first-letter {
+    text-transform: capitalize;
+}
+.Temperature  img {
+    vertical-align: top;
+    margin-right: 5px;
+    height: 64px;
+    width: 64px;
+}
+
+.Temperature  strong {
+    color: rgb(33, 33, 33);
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.Temperature .units {
+    position: relative;
+    font-size: 16px;
+    top: -28px;
+}
+
+.Temperature .active {
+    color: rgb(33, 33, 33);
+    cursor: default;
+}
+
+.Temperature .active:hover {
+    text-decoration: none;
+}

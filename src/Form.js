@@ -1,11 +1,47 @@
 import React, {useState} from "react";
 import axios from "axios";
+import Overview from "./Overview";
 import "./Form.css";
 
-export default function Form() {
-  return (
+export default function Form(props) {
+  const [weatherData, setWeatherData] = useState({ready : false});
+  const [city, setCity] = useState(props.defaulCity);
+
+  function displayWeather(response) {
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description : response.data.weather[0].description,
+      iconUrl: "https://ss1.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      wind: response.data.wind.speed,
+      city: response.data.name
+    });
+  }
+  
+  function search () {
+    const apiKey = "c8dfba9473e483757034c96569ec14f9";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+   
+  }
+  
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+    
+  }
+  function changeCity(event) {
+    setCity(event.target.value);
+
+  }
+  
+
+  if (weatherData.ready){
+    return (
     <div className="Form">
-      <form id="search-form" 
+      <form 
       className="mb-3"
       onSubmit={handleSubmit}>
         <div className="row">
@@ -14,7 +50,7 @@ export default function Form() {
               type="search"
               placeholder="Type a city.."
               className="form-control"
-              id="city-input"
+              autoFocus="on"
               onChange={changeCity}
             />
           </div>
@@ -27,6 +63,12 @@ export default function Form() {
           </div>
         </div>
       </form>
+      <Overview  info={weatherData} />
     </div>
   );
+  }else {
+    search();
+    return "Loading...";
+  }
+  
 }

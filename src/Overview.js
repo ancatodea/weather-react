@@ -2,21 +2,21 @@ import React from "react";
 import "./Overview.css";
 import Cloud from "./images/cloud.png";
 
-export default function Overview() {
+export default function Overview(props) {
   return (
     <div className="Overview">
-      <h1>New York</h1>
+      <h1>{props.defaultCity}</h1>
       <ul>
         <li>
           Last updated: Tuesday 10:00 
         </li>
-        <li>Scattered clouds</li>
+        <li>{props.info.description}</li>
       </ul>
       <div className="row">
          <div className="col-6">
                 <div className="Temperature">
         <img src={Cloud} alt="cloud" id="icon" />
-        <strong>15</strong>
+        <strong>{Math.round(props.info.temperature)}</strong>
         <span className="units">°C</span>
       </div>
     </div>
@@ -24,10 +24,10 @@ export default function Overview() {
        <div className="WeatherData">
       <ul>
         <li>
-          Humidity: 20 %
+          Humidity: {props.info.humidity}%
         </li>
         <li>
-          Wind: 10 m/s
+          Wind: {props.info.wind}m/s
         </li>
       </ul>
     </div>

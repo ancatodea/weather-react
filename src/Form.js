@@ -14,7 +14,7 @@ export default function Form(props) {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description : response.data.weather[0].description,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       name: response.data.name
     });

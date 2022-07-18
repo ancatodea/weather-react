@@ -47,11 +47,11 @@
 .WeatherData li:first-letter {
     text-transform: capitalize;
 }
-.Temperature  img {
+.Temperature  canvas {
     vertical-align: top;
-    margin-right: 5px;
-    height: 64px;
-    width: 64px;
+    margin-right: 24px;
+    margin-top: 10px;
+   
 }
 
 .Temperature  strong {

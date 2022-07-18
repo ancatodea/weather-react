@@ -1,6 +1,7 @@
 import React from "react";
 import "./Overview.css";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Overview(props) {
   return (
@@ -14,8 +15,8 @@ export default function Overview(props) {
       </ul>
       <div className="row">
          <div className="col-6">
-                <div className="Temperature">
-        <img src={props.info.iconUrl} alt="icon" />
+                <div className="Temperature"> 
+        <WeatherIcon code= {props.info.icon} />
         <strong>{Math.round(props.info.temperature)}</strong>
         <span className="units">°C</span>
       </div>

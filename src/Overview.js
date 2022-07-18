@@ -1,14 +1,15 @@
 import React from "react";
 import "./Overview.css";
+import FormattedDate from "./FormattedDate";
 import Cloud from "./images/cloud.png";
 
 export default function Overview(props) {
   return (
     <div className="Overview">
-      <h1>{props.defaultCity}</h1>
+      <h1>{props.info.name}</h1>
       <ul>
         <li>
-          Last updated: Tuesday 10:00 
+         <FormattedDate date={props.info.date} / >
         </li>
         <li>{props.info.description}</li>
       </ul>

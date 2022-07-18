@@ -5,7 +5,7 @@ import "./Form.css";
 
 export default function Form(props) {
   const [weatherData, setWeatherData] = useState({ready : false});
-  const [city, setCity] = useState(props.defaulCity);
+  const [city, setCity] = useState(props.defaultCity);
 
   function displayWeather(response) {
     setWeatherData({
@@ -16,7 +16,7 @@ export default function Form(props) {
       description : response.data.weather[0].description,
       iconUrl: "https://ss1.gstatic.com/onebox/weather/64/partly_cloudy.png",
       wind: response.data.wind.speed,
-      city: response.data.name
+      name: response.data.name
     });
   }
   

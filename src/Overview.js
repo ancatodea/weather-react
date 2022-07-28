@@ -40,7 +40,7 @@ export default function Overview(props) {
     </div>
   </div>
   </div>
-  <WeatherForecast />
+  <WeatherForecast coordinates={props.info.coordinates}/>
   </div>
   );
 }

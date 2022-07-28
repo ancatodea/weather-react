@@ -3,10 +3,12 @@ import "./Overview.css";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Overview(props) {
   return (
     <div className="Overview">
+      <div className="container">
       <h1>{props.info.name}</h1>
       <ul>
         <li>
@@ -18,7 +20,7 @@ export default function Overview(props) {
          <div className="col-6">
          <div className="Temperature "> 
       
-        <WeatherIcon code= {props.info.icon} />
+        <WeatherIcon code= {props.info.icon} size={46} />
        
         <WeatherTemperature celsius={props.info.temperature} />
     
@@ -37,6 +39,8 @@ export default function Overview(props) {
     </div>
     </div>
   </div>
+  </div>
+  <WeatherForecast />
   </div>
   );
 }

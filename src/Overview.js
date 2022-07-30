@@ -33,7 +33,7 @@ export default function Overview(props) {
           Humidity: {props.info.humidity}%
         </li>
         <li>
-          Wind: {props.info.wind}m/s
+          Wind: {props.info.wind}km/h
         </li>
       </ul>
     </div>
